@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket</title>
+</head>
+<body>
+    <input id="ws" >
+    <input id="ws2" >
+    <script>
+        let socket = new WebSocket('ws://' + window.location.host + '/ws/chat')
+        socket.onopen = (e) => {
+            console.log('Connection is open...')
+        }
+        socket.onclose = (e) => {
+            console.log('Connection is closed.')
+        }
+        socket.onmessage = (e) => {
+            ws2.value = e.data
+        }
+        ws.onchange = (e) => {
+            socket.send(ws.value)
+        }
+    </script>
+</body>
+</html>

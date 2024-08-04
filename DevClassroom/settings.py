@@ -31,6 +31,8 @@ ALLOWED_HOSTS = ['matveye7.beget.tech','127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    "daphne",
+    "lobby",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -68,6 +70,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'DevClassroom.wsgi.application'
+ASGI_APPLICATION = 'DevClassroom.asgi.application'
 
 
 # Database
